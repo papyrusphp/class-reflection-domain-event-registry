@@ -11,7 +11,7 @@ Implementation of [papyrus/domain-event-registry](https://github.com/papyrusphp/
 ## Installation
 Install via composer:
 ```bash
-$ composer install papyrus/class-reflection-domain-event-registry
+composer require papyrus/class-reflection-domain-event-registry
 ```
 
 ## Configuration
