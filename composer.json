@@ -1,5 +1,5 @@
 {
-    "name": "papyrus/class-reflector-domain-event-registry",
+    "name": "papyrus/class-reflection-domain-event-registry",
     "description": "Implementation of papyrus/domain-event-registry, based on class reflection",
     "license": "MIT",
     "type": "library",

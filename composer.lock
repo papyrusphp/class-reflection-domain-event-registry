@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5e0eaa4ddf9488d34d4298dfb1baaaaf",
+    "content-hash": "1d13e510f60f620bb8a41c539d36f08c",
     "packages": [
         {
             "name": "jerowork/file-class-reflector",
