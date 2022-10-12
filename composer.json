@@ -39,6 +39,9 @@
         "phpunit/phpunit": "^9.5",
         "scrutinizer/ocular": "^1.9"
     },
+    "provide": {
+        "papyrus/domain-event-registry-implementation": "0.1"
+    },
     "autoload": {
         "psr-4": {
             "Papyrus\\ClassReflectionDomainEventRegistry\\": "src/"
