@@ -66,6 +66,7 @@ services:
   Papyrus\DomainEventRegistry\DomainEventRegistry:
     class: Papyrus\ClassReflectionDomainEventRegistry\ClassReflectionDomainEventRegistry
 
+  # Optionally wrapped in a cache (PSR-16) layer (recommended)
   Papyrus\ClassReflectionDomainEventRegistry\Cached\CachedDomainEventClassNameLoaderDecorator: ~
     decorates: '@Papyrus\DomainEventRegistry\DomainEventRegistry'
 
