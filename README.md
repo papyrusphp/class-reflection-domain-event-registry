@@ -65,11 +65,13 @@ services:
 
   Papyrus\DomainEventRegistry\DomainEventRegistry:
     class: Papyrus\ClassReflectionDomainEventRegistry\ClassReflectionDomainEventRegistry
-
-  # Optionally wrapped in a cache (PSR-16) layer (recommended)
-  Papyrus\ClassReflectionDomainEventRegistry\Cached\CachedDomainEventClassNameLoaderDecorator: ~
-    decorates: '@Papyrus\DomainEventRegistry\DomainEventRegistry'
+    arguments:
+      $directory: '%kernel.project_dir%/src/Domain'
 
   Papyrus\ClassReflectionDomainEventRegistry\DomainEventClassNameLoader:
     class: Papyrus\ClassReflectionDomainEventRegistry\FileClassReflector\FileClassReflectorDomainEventClassNameLoader
+
+  # Optionally wrapped in a cache (PSR-16) layer (recommended)
+  Papyrus\ClassReflectionDomainEventRegistry\Cached\CachedDomainEventClassNameLoaderDecorator:
+    decorates: Papyrus\ClassReflectionDomainEventRegistry\DomainEventClassNameLoader
 ```
