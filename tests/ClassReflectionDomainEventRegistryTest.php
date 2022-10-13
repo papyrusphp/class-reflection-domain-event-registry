@@ -10,6 +10,7 @@ use Mockery\MockInterface;
 use Papyrus\ClassReflectionDomainEventRegistry\ClassReflectionDomainEventRegistry;
 use Papyrus\ClassReflectionDomainEventRegistry\DomainEventClassNameLoader;
 use Papyrus\ClassReflectionDomainEventRegistry\Test\FileClassReflector\Stub\TestDomainEvent;
+use Papyrus\DomainEventRegistry\DomainEventNameResolver\NamedDomainEvent\NamedDomainEventNameResolver;
 use Papyrus\DomainEventRegistry\DomainEventNotRegisteredException;
 
 /**
@@ -28,6 +29,7 @@ class ClassReflectionDomainEventRegistryTest extends MockeryTestCase
     {
         $this->domainEventRegistry = new ClassReflectionDomainEventRegistry(
             $this->domainEventClassNameLoader = Mockery::mock(DomainEventClassNameLoader::class),
+            new NamedDomainEventNameResolver(),
             'some-dir',
         );
 

@@ -4,8 +4,99 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1d13e510f60f620bb8a41c539d36f08c",
+    "content-hash": "49d7fceda27899f8fbb3b8b68bff130a",
     "packages": [
+        {
+            "name": "doctrine/inflector",
+            "version": "2.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/doctrine/inflector.git",
+                "reference": "ade2b3bbfb776f27f0558e26eed43b5d9fe1b392"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doctrine/inflector/zipball/ade2b3bbfb776f27f0558e26eed43b5d9fe1b392",
+                "reference": "ade2b3bbfb776f27f0558e26eed43b5d9fe1b392",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2 || ^8.0"
+            },
+            "require-dev": {
+                "doctrine/coding-standard": "^9",
+                "phpstan/phpstan": "^1.8",
+                "phpstan/phpstan-phpunit": "^1.1",
+                "phpstan/phpstan-strict-rules": "^1.3",
+                "phpunit/phpunit": "^8.5 || ^9.5",
+                "vimeo/psalm": "^4.25"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Doctrine\\Inflector\\": "lib/Doctrine/Inflector"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
+                {
+                    "name": "Roman Borschel",
+                    "email": "roman@code-factory.org"
+                },
+                {
+                    "name": "Benjamin Eberlei",
+                    "email": "kontakt@beberlei.de"
+                },
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com"
+                },
+                {
+                    "name": "Johannes Schmitt",
+                    "email": "schmittjoh@gmail.com"
+                }
+            ],
+            "description": "PHP Doctrine Inflector is a small library that can perform string manipulations with regard to upper/lowercase and singular/plural forms of words.",
+            "homepage": "https://www.doctrine-project.org/projects/inflector.html",
+            "keywords": [
+                "inflection",
+                "inflector",
+                "lowercase",
+                "manipulation",
+                "php",
+                "plural",
+                "singular",
+                "strings",
+                "uppercase",
+                "words"
+            ],
+            "support": {
+                "issues": "https://github.com/doctrine/inflector/issues",
+                "source": "https://github.com/doctrine/inflector/tree/2.0.5"
+            },
+            "funding": [
+                {
+                    "url": "https://www.doctrine-project.org/sponsorship.html",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://www.patreon.com/phpdoctrine",
+                    "type": "patreon"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/doctrine%2Finflector",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2022-09-07T09:01:28+00:00"
+        },
         {
             "name": "jerowork/file-class-reflector",
             "version": "0.1.1",
@@ -123,20 +214,21 @@
         },
         {
             "name": "papyrus/domain-event-registry",
-            "version": "0.1.0",
+            "version": "0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/papyrusphp/domain-event-registry.git",
-                "reference": "c83a0502a5ede7319b9d17ac6f38ed7693840876"
+                "reference": "683df528b3d6babaa0ba2fa36db3741fd69a4da0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/papyrusphp/domain-event-registry/zipball/c83a0502a5ede7319b9d17ac6f38ed7693840876",
-                "reference": "c83a0502a5ede7319b9d17ac6f38ed7693840876",
+                "url": "https://api.github.com/repos/papyrusphp/domain-event-registry/zipball/683df528b3d6babaa0ba2fa36db3741fd69a4da0",
+                "reference": "683df528b3d6babaa0ba2fa36db3741fd69a4da0",
                 "shasum": ""
             },
             "require": {
-                "papyrus/event-sourcing": "^0.1",
+                "doctrine/inflector": "^2.0",
+                "papyrus/event-sourcing": "^0.2",
                 "php": "^8.1"
             },
             "require-dev": {
@@ -175,22 +267,22 @@
             ],
             "support": {
                 "issues": "https://github.com/papyrusphp/domain-event-registry/issues",
-                "source": "https://github.com/papyrusphp/domain-event-registry/tree/0.1.0"
+                "source": "https://github.com/papyrusphp/domain-event-registry/tree/0.2.0"
             },
-            "time": "2022-10-09T07:42:40+00:00"
+            "time": "2022-10-13T16:47:33+00:00"
         },
         {
             "name": "papyrus/event-sourcing",
-            "version": "0.1.0",
+            "version": "0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/papyrusphp/event-sourcing.git",
-                "reference": "aeeb384f34cc0f34aebf1ce4ccf51094e6a3385f"
+                "reference": "b6cbc9fe70c8701d5db36bd4e9bc13c528a08b4d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/papyrusphp/event-sourcing/zipball/aeeb384f34cc0f34aebf1ce4ccf51094e6a3385f",
-                "reference": "aeeb384f34cc0f34aebf1ce4ccf51094e6a3385f",
+                "url": "https://api.github.com/repos/papyrusphp/event-sourcing/zipball/b6cbc9fe70c8701d5db36bd4e9bc13c528a08b4d",
+                "reference": "b6cbc9fe70c8701d5db36bd4e9bc13c528a08b4d",
                 "shasum": ""
             },
             "require": {
@@ -230,9 +322,9 @@
             ],
             "support": {
                 "issues": "https://github.com/papyrusphp/event-sourcing/issues",
-                "source": "https://github.com/papyrusphp/event-sourcing/tree/0.1.0"
+                "source": "https://github.com/papyrusphp/event-sourcing/tree/0.2.0"
             },
-            "time": "2022-10-09T05:28:45+00:00"
+            "time": "2022-10-13T14:28:19+00:00"
         },
         {
             "name": "phpdocumentor/reflection",
@@ -2182,16 +2274,16 @@
         },
         {
             "name": "phpstan/phpdoc-parser",
-            "version": "1.9.0",
+            "version": "1.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpdoc-parser.git",
-                "reference": "5f7eb9724b0ae386b922f34b62b3b55fee3b26cd"
+                "reference": "87fa2d526e56737a2ae8fa201a61b15efae59b8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/5f7eb9724b0ae386b922f34b62b3b55fee3b26cd",
-                "reference": "5f7eb9724b0ae386b922f34b62b3b55fee3b26cd",
+                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/87fa2d526e56737a2ae8fa201a61b15efae59b8a",
+                "reference": "87fa2d526e56737a2ae8fa201a61b15efae59b8a",
                 "shasum": ""
             },
             "require": {
@@ -2221,22 +2313,22 @@
             "description": "PHPDoc parser with support for nullable, intersection and generic types",
             "support": {
                 "issues": "https://github.com/phpstan/phpdoc-parser/issues",
-                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.9.0"
+                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.10.0"
             },
-            "time": "2022-10-06T11:32:36+00:00"
+            "time": "2022-10-12T19:19:18+00:00"
         },
         {
             "name": "phpstan/phpstan",
-            "version": "1.8.8",
+            "version": "1.8.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "08310ce271984587e2a4cda94e1ac66510a6ea07"
+                "reference": "3a72d9d9f2528fbd50c2d8fcf155fd9f74ade3f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/08310ce271984587e2a4cda94e1ac66510a6ea07",
-                "reference": "08310ce271984587e2a4cda94e1ac66510a6ea07",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/3a72d9d9f2528fbd50c2d8fcf155fd9f74ade3f2",
+                "reference": "3a72d9d9f2528fbd50c2d8fcf155fd9f74ade3f2",
                 "shasum": ""
             },
             "require": {
@@ -2266,7 +2358,7 @@
             ],
             "support": {
                 "issues": "https://github.com/phpstan/phpstan/issues",
-                "source": "https://github.com/phpstan/phpstan/tree/1.8.8"
+                "source": "https://github.com/phpstan/phpstan/tree/1.8.9"
             },
             "funding": [
                 {
@@ -2282,7 +2374,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-10-06T12:51:57+00:00"
+            "time": "2022-10-13T13:40:18+00:00"
         },
         {
             "name": "phpstan/phpstan-mockery",

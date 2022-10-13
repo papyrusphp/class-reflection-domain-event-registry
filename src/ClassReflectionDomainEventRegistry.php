@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Papyrus\ClassReflectionDomainEventRegistry;
 
+use Papyrus\DomainEventRegistry\DomainEventNameResolver\DomainEventNameResolver;
 use Papyrus\DomainEventRegistry\DomainEventNotRegisteredException;
 use Papyrus\DomainEventRegistry\DomainEventRegistry;
 use Papyrus\EventSourcing\DomainEvent;
@@ -17,6 +18,7 @@ final class ClassReflectionDomainEventRegistry implements DomainEventRegistry
 
     public function __construct(
         private readonly DomainEventClassNameLoader $domainEventClassNameLoader,
+        private readonly DomainEventNameResolver $domainEventNameResolver,
         private readonly string $directory,
     ) {
     }
@@ -40,7 +42,7 @@ final class ClassReflectionDomainEventRegistry implements DomainEventRegistry
 
         foreach ($classes as $class) {
             if (is_subclass_of($class, DomainEvent::class)) {
-                $this->domainEventClassNames[$class::getEventName()] = $class;
+                $this->domainEventClassNames[$this->domainEventNameResolver->resolve($class)] = $class;
             }
         }
     }
