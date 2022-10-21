@@ -9,10 +9,18 @@ use Papyrus\ClassReflectionDomainEventRegistry\DomainEventClassNameLoader;
 use Psr\SimpleCache\CacheInterface;
 use Psr\SimpleCache\InvalidArgumentException;
 
+/**
+ * @template DomainEvent of object
+ *
+ * @implements DomainEventClassNameLoader<DomainEvent>
+ */
 final class CachedDomainEventClassNameLoaderDecorator implements DomainEventClassNameLoader
 {
     private const CACHE_KEY = 'papyrus.class-reflection-domain-event-registry';
 
+    /**
+     * @param DomainEventClassNameLoader<DomainEvent> $domainEventClassNameLoader
+     */
     public function __construct(
         private readonly DomainEventClassNameLoader $domainEventClassNameLoader,
         private readonly CacheInterface $cache,
