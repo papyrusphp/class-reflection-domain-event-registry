@@ -4,8 +4,9 @@ declare(strict_types=1);
 
 namespace Papyrus\ClassReflectionDomainEventRegistry;
 
-use Papyrus\EventSourcing\DomainEvent;
-
+/**
+ * @template DomainEvent of object
+ */
 interface DomainEventClassNameLoader
 {
     /**

@@ -23,8 +23,7 @@
     "require": {
         "php": "^8.1",
         "jerowork/file-class-reflector": "^0.1",
-        "papyrus/domain-event-registry": "^0.2",
-        "papyrus/event-sourcing": "^0.2",
+        "papyrus/domain-event-registry": "^0.3",
         "psr/simple-cache": "^1.0 || ^2.0 || ^3.0"
     },
     "require-dev": {

@@ -6,8 +6,12 @@ namespace Papyrus\ClassReflectionDomainEventRegistry\FileClassReflector;
 
 use Jerowork\FileClassReflector\ClassReflectorFactory;
 use Papyrus\ClassReflectionDomainEventRegistry\DomainEventClassNameLoader;
-use Papyrus\EventSourcing\DomainEvent;
 
+/**
+ * @template DomainEvent of object
+ *
+ * @implements DomainEventClassNameLoader<DomainEvent>
+ */
 final class FileClassReflectorDomainEventClassNameLoader implements DomainEventClassNameLoader
 {
     public function __construct(
@@ -20,7 +24,7 @@ final class FileClassReflectorDomainEventClassNameLoader implements DomainEventC
         $reflector = $this->classReflectorFactory->create()->addDirectory($directory);
         $domainEventClassNames = [];
         foreach ($reflector->reflect()->getClasses() as $class) {
-            if ($class->implementsInterface(DomainEvent::class) === false) {
+            if (str_ends_with($class->getName(), 'Event') === false) {
                 continue;
             }
 

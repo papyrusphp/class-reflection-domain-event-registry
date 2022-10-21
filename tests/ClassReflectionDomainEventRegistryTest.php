@@ -10,7 +10,7 @@ use Mockery\MockInterface;
 use Papyrus\ClassReflectionDomainEventRegistry\ClassReflectionDomainEventRegistry;
 use Papyrus\ClassReflectionDomainEventRegistry\DomainEventClassNameLoader;
 use Papyrus\ClassReflectionDomainEventRegistry\Test\FileClassReflector\Stub\TestDomainEvent;
-use Papyrus\DomainEventRegistry\DomainEventNameResolver\NamedDomainEvent\NamedDomainEventNameResolver;
+use Papyrus\DomainEventRegistry\DomainEventNameResolver\DomainEventNameResolver;
 use Papyrus\DomainEventRegistry\DomainEventNotRegisteredException;
 
 /**
@@ -19,17 +19,25 @@ use Papyrus\DomainEventRegistry\DomainEventNotRegisteredException;
 class ClassReflectionDomainEventRegistryTest extends MockeryTestCase
 {
     /**
-     * @var MockInterface&DomainEventClassNameLoader
+     * @var MockInterface&DomainEventClassNameLoader<object>
      */
     private MockInterface $domainEventClassNameLoader;
 
+    /**
+     * @var MockInterface&DomainEventNameResolver<object>
+     */
+    private MockInterface $resolver;
+
+    /**
+     * @var ClassReflectionDomainEventRegistry<object>
+     */
     private ClassReflectionDomainEventRegistry $domainEventRegistry;
 
     protected function setUp(): void
     {
         $this->domainEventRegistry = new ClassReflectionDomainEventRegistry(
             $this->domainEventClassNameLoader = Mockery::mock(DomainEventClassNameLoader::class),
-            new NamedDomainEventNameResolver(),
+            $this->resolver = Mockery::mock(DomainEventNameResolver::class),
             'some-dir',
         );
 
@@ -45,6 +53,11 @@ class ClassReflectionDomainEventRegistryTest extends MockeryTestCase
             TestDomainEvent::class,
         ]);
 
+        $this->resolver->expects('resolve')
+            ->with(TestDomainEvent::class)
+            ->andReturn('test.domain_event')
+        ;
+
         $domainEventClassName = $this->domainEventRegistry->retrieve('test.domain_event');
 
         self::assertSame(TestDomainEvent::class, $domainEventClassName);
@@ -58,6 +71,11 @@ class ClassReflectionDomainEventRegistryTest extends MockeryTestCase
         $this->domainEventClassNameLoader->expects('load')->once()->andReturn([
             TestDomainEvent::class,
         ]);
+
+        $this->resolver->expects('resolve')
+            ->with(TestDomainEvent::class)
+            ->andReturn('test.domain_event')
+        ;
 
         $domainEventClassName = $this->domainEventRegistry->retrieve('test.domain_event');
 
@@ -76,6 +94,11 @@ class ClassReflectionDomainEventRegistryTest extends MockeryTestCase
         $this->domainEventClassNameLoader->expects('load')->andReturn([
             TestDomainEvent::class,
         ]);
+
+        $this->resolver->expects('resolve')
+            ->with(TestDomainEvent::class)
+            ->andReturn('test.domain_event')
+        ;
 
         self::expectException(DomainEventNotRegisteredException::class);
 

@@ -18,7 +18,7 @@ use Psr\SimpleCache\CacheInterface;
 class CachedDomainEventClassNameLoaderDecoratorTest extends MockeryTestCase
 {
     /**
-     * @var MockInterface&DomainEventClassNameLoader
+     * @var MockInterface&DomainEventClassNameLoader<object>
      */
     private MockInterface $domainEventClassNameLoader;
 
@@ -27,6 +27,9 @@ class CachedDomainEventClassNameLoaderDecoratorTest extends MockeryTestCase
      */
     private MockInterface $cache;
 
+    /**
+     * @var CachedDomainEventClassNameLoaderDecorator<object>
+     */
     private CachedDomainEventClassNameLoaderDecorator $decorator;
 
     protected function setUp(): void
